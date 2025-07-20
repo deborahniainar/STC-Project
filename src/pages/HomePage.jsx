@@ -1,21 +1,44 @@
 import React from 'react'
 import { Link as RouterLink } from 'react-router-dom'
-import { useEffect } from 'react'
-import { Element, Link as ScrollLink  } from 'react-scroll'
+import { useEffect, useState } from 'react'
+import { Element, Link as ScrollLink, animateScroll as scroll  } from 'react-scroll'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import bgImage from '../Images/bgImg.png'
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 
 const sectionClass = "min-h-screen px-20 flex"
 
 const HomePage = () => {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+  const [showScrollTop, setShowScrollTop] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 600)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   useEffect(() => {
     AOS.init({
-      duration: 100
+      duration: 1000
     })
   }, [])
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(formData)
+    alert('Message envoyé !')
+    // Reset le formulaire
+    setFormData({ name: '', email: '', message: '' })
+  }
   
   return (
     <div>
@@ -149,10 +172,65 @@ const HomePage = () => {
       </Element>
 
       {/* Contact */}
-      <Element name="contact" className={`${sectionClass} bg-gray-100`}>
-        Contact Us
+      <Element name="contact" className="min-h-screen bg-gray-100 py-20 px-6">
+        <div className="max-w-4xl mx-auto bg-white p-10 rounded-lg shadow-lg" data-aos="fade-up">
+          <h2 className="text-4xl font-bold text-center mb-8 text-gray-800">Contactez-nous</h2>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label className="block mb-2 text-gray-700">Nom</label>
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-400"
+              />
+            </div>
+            <div>
+              <label className="block mb-2 text-gray-700">Email</label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-400"
+              />
+            </div>
+            <div>
+              <label className="block mb-2 text-gray-700">Message</label>
+              <textarea
+                name="message"
+                rows="5"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-400"
+              ></textarea>
+            </div>
+            <div className="text-center">
+              <button
+                type="submit"
+                className="bg-primary hover:bg-secondary text-white font-semibold py-3 px-6 rounded-md transition duration-300"
+              >
+                Envoyer le message
+              </button>
+            </div>
+          </form>
+        </div>
       </Element>
 
+      {/* Scroll-to-top button */}
+      {showScrollTop && (
+        <button
+          onClick={() => scroll.scrollToTop({ duration: 100 })}
+          className="fixed bottom-6 right-6 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-opacity-80 transition-all duration-300 z-50"
+          aria-label="Revenir en haut"
+        >
+          <KeyboardArrowUpIcon />
+        </button>
+      )}
     </div>
   )
 }
