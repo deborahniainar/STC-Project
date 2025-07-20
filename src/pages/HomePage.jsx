@@ -7,8 +7,18 @@ import 'aos/dist/aos.css'
 import bgImage from '../Images/bgImg.png'
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
+import BuildIcon from '@mui/icons-material/Build'
+import TerrainIcon from '@mui/icons-material/Terrain'
+import ConstructionIcon from '@mui/icons-material/Construction'
 
 const sectionClass = "min-h-screen px-20 flex"
+
+const services = [
+  { title: "Terrassement", image: bgImage, description: "Travaux de terrassement professionnels et sécurisés." },
+  { title: "Construction", image: bgImage, description: "Bâtiments durables et aux normes." },
+  { title: "Extraction", image: bgImage, description: "Extraction de matériaux avec équipement moderne." },
+  { title: "Voiries", image: bgImage, description: "Réalisation de routes et infrastructures de qualité." },
+]
 
 const HomePage = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
@@ -53,7 +63,9 @@ const HomePage = () => {
         <div className="block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <h1 className="text-5xl font-bold mb-4">Bienvenue chez <span className='text-primary'>STC</span></h1>
           <p className="text-xl py-4">
-            <span className='text-primary font-bold text-2xl'>S</span>ociété de <span className='text-primary font-bold text-2xl'>T</span>errassement et de <span className='text-primary font-bold text-2xl'>C</span>onstruction
+            <span className='text-primary font-bold text-2xl'>S</span>ociété de 
+            <span className='text-primary font-bold text-2xl'>T</span>errassement et de 
+            <span className='text-primary font-bold text-2xl'>C</span>onstruction
           </p>
           <p className="text-xl">Votre partenaire de confiance pour tous vos projets de construction et de terrassement.</p>
           <button className='bg-primary text-white px-4 py-4 rounded-md my-4 gap-2 text-2xl'> <ScrollLink to="services" smooth={true} duration={100} offset={-80} className='cursor-pointer'> En savoir plus <KeyboardDoubleArrowRightIcon className='animate-wiggleRight' /></ScrollLink></button>
@@ -61,8 +73,46 @@ const HomePage = () => {
       </Element>
 
       {/* Services */}
-      <Element name="services" className="min-h-screen bg-background py-20 px-6 md:px-20 text-center">
-        <h1 className="text-5xl font-bold mb-16">Nos Services</h1>
+      <Element name="services" className="py-20 px-4 md:px-20 bg-gray-100">
+        <h2 className="text-4xl font-bold text-center mb-12">Nos Services</h2>
+
+        <div className="space-y-16">
+          {/* Carte 1 */}
+          <div className="flex flex-col md:flex-row items-center" data-aos="fade-up">
+            <div className="md:w-1/2 h-64 bg-cover bg-center rounded-lg shadow-lg" style={{ backgroundImage: `url(${bgImage})` }}></div>
+            <div className="md:w-1/2 mt-6 md:mt-0 md:ml-10 text-center md:text-left">
+              <h3 className="text-2xl font-bold flex items-center justify-center md:justify-start mb-4"><TerrainIcon className='text-primary mr-2' /> Terrassement</h3>
+              <p className="text-gray-700 mb-4">Travaux de terrassement pour tout type de terrain.</p>
+              <button className="bg-primary text-white px-5 py-2 rounded-md">Voir plus</button>
+            </div>
+          </div>
+
+          {/* Carte 2 */}
+          <div className="flex flex-col md:flex-row-reverse items-center" data-aos="fade-up">
+            <div className="md:w-1/2 h-64 bg-cover bg-center rounded-lg shadow-lg" style={{ backgroundImage: `url(${bgImage})` }}></div>
+            <div className="md:w-1/2 mt-6 md:mt-0 md:mr-10 text-center md:text-left">
+              <h3 className="text-2xl font-bold flex items-center justify-center md:justify-start mb-4"><BuildIcon className='text-primary mr-2' /> Construction</h3>
+              <p className="text-gray-700 mb-4">Bâtiments, maisons et infrastructures.</p>
+              <button className="bg-primary text-white px-5 py-2 rounded-md">Voir plus</button>
+            </div>
+          </div>
+
+          {/* Carte 3 */}
+          <div className="flex flex-col md:flex-row items-center" data-aos="fade-up">
+            <div className="md:w-1/2 h-64 bg-cover bg-center rounded-lg shadow-lg" style={{ backgroundImage: `url(${bgImage})` }}></div>
+            <div className="md:w-1/2 mt-6 md:mt-0 md:ml-10 text-center md:text-left">
+              <h3 className="text-2xl font-bold flex items-center justify-center md:justify-start mb-4"><ConstructionIcon className='text-primary mr-2' /> Extraction</h3>
+              <p className="text-gray-700 mb-4">Extraction de matériaux pour vos travaux publics et privés.</p>
+              <button className="bg-primary text-white px-5 py-2 rounded-md">Voir plus</button>
+            </div>
+          </div>
+        </div>
+      </Element>
+
+      
+      {/* Réalisations */}
+      <Element name="achievements" className="min-h-screen bg-White py-20 px-6 md:px-20 text-center">
+        <h1 className="text-5xl font-bold mb-16">Nos Réalisations</h1>
 
         {/* Cartes */}
         <div className="flex flex-col gap-12 items-start">
@@ -166,10 +216,6 @@ const HomePage = () => {
         </div>
       </Element>
 
-      {/* Réalisations */}
-      <Element name="achievements" className={`${sectionClass} bg-white`}>
-        Nos Réalisations
-      </Element>
 
       {/* Contact */}
       <Element name="contact" className="min-h-screen bg-gray-100 py-20 px-6">
