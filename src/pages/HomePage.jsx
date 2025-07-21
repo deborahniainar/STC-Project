@@ -1,27 +1,45 @@
 import React from 'react'
-import { Link as RouterLink } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { Element, Link as ScrollLink, animateScroll as scroll  } from 'react-scroll'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import bgImage from '../Images/bgImg.png'
+import terrassement from '../Images/Terrassement.png'
+import construction from '../Images/Construction.jpg'
+import extraction from '../Images/Extraction.png'
+import excavation from '../Images/Excavation.png'
+import demolition from '../Images/Demolition.png'
+import transport from '../Images/Transport.png'
+import realisation1 from '../Images/ParkChomoni.png'
+import realisation2 from '../Images/ParkFoumbouni.png'
+import realisation3 from '../Images/Piste-Mvouni.png'
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import BuildIcon from '@mui/icons-material/Build'
 import TerrainIcon from '@mui/icons-material/Terrain'
 import ConstructionIcon from '@mui/icons-material/Construction'
+import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
+
 
 const sectionClass = "min-h-screen px-20 flex"
 
 const services = [
-  { title: "Terrassement", image: bgImage, description: "Travaux de terrassement professionnels et sécurisés." },
-  { title: "Construction", image: bgImage, description: "Bâtiments durables et aux normes." },
-  { title: "Extraction", image: bgImage, description: "Extraction de matériaux avec équipement moderne." },
-  { title: "Voiries", image: bgImage, description: "Réalisation de routes et infrastructures de qualité." },
-]
+  { title: "Terrassement", image: terrassement, description: "Préparation du terrain" },
+  { title: "Construction", image: construction, description: "Édification de structures" },
+  { title: "Extraction", image: extraction, description: "Extraction de matériaux" },
+  { title: "Excavation", image: excavation, description: "Travaux de creusage" },
+  { title: "Démolition", image: demolition, description: "Démolition sécurisée" },
+  { title: "Transport", image: transport, description: "Transport de matériaux" },
+];
 
 const HomePage = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+  
   const [showScrollTop, setShowScrollTop] = useState(false)
 
   useEffect(() => {
@@ -39,8 +57,8 @@ const HomePage = () => {
   }, [])
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };  
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -73,13 +91,59 @@ const HomePage = () => {
       </Element>
 
       {/* Services */}
-      <Element name="services" className="py-20 px-4 md:px-20 bg-gray-100">
-        <h2 className="text-4xl font-bold text-center mb-12">Nos Services</h2>
+      <Element name="services" className="min-h-screen bg-gray-100 py-20 px-6 md:px-60">
+        <div className="text-center mb-12">
+          <h1 className="text-5xl font-bold mb-4">Nos Services</h1>
+        </div>
 
-        <div className="space-y-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          {services.map((service, i) => (
+            <div
+              key={i}
+              className="group relative h-80 rounded-xl overflow-hidden shadow-lg"
+              data-aos={i % 2 === 0 ? 'fade-right' : 'fade-left'}
+              data-aos-delay={i * 200}
+              data-aos-duration="1000"
+            >
+              {/* Image zoom au hover */}
+              <div
+                className="absolute inset-0 bg-center bg-cover transition-transform duration-700 group-hover:scale-110"
+                style={{ backgroundImage: `url(${service.image})` }}
+              />
+
+              {/* Overlay sombre au hover */}
+              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/60 transition duration-500" />
+
+              {/* Titre en bas */}
+              <div className="absolute bottom-0 w-full text-center text-white text-2xl font-bold py-4 z-10">
+                {service.title}
+              </div>
+
+              {/* Description + lien qui glisse */}
+              <div className="absolute inset-0 flex items-end justify-center opacity-0 group-hover:opacity-100 transition-all duration-700 ease-in-out z-20">
+                <div className="bg-white/20 backdrop-blur-md text-white text-sm text-center px-5 py-4 mb-6 mx-4 rounded-md w-full">
+                  <p className="mb-2">{service.description}</p>
+                  <a
+                    href="#"
+                    className="inline-flex items-center text-white font-semibold hover:underline"
+                  >
+                    Voir plus <ArrowCircleRightIcon className="ml-2" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Element>
+            
+      {/* Réalisations */}
+      <Element name="achievements" className="py-20 px-6 md:px-60 bg-gray-200">
+        <h2 className="text-4xl font-bold text-center mb-12">Nos Réalisations</h2>
+
+        <div className="space-y-5">
           {/* Carte 1 */}
           <div className="flex flex-col md:flex-row items-center" data-aos="fade-up">
-            <div className="md:w-1/2 h-64 bg-cover bg-center rounded-lg shadow-lg" style={{ backgroundImage: `url(${bgImage})` }}></div>
+            <div className="w-full md:w-1/2 h-64 sm:h-80 bg-cover bg-center rounded-lg shadow-lg" style={{ backgroundImage: `url(${realisation1})` }}></div>
             <div className="md:w-1/2 mt-6 md:mt-0 md:ml-10 text-center md:text-left">
               <h3 className="text-2xl font-bold flex items-center justify-center md:justify-start mb-4"><TerrainIcon className='text-primary mr-2' /> Terrassement</h3>
               <p className="text-gray-700 mb-4">Travaux de terrassement pour tout type de terrain.</p>
@@ -89,7 +153,7 @@ const HomePage = () => {
 
           {/* Carte 2 */}
           <div className="flex flex-col md:flex-row-reverse items-center" data-aos="fade-up">
-            <div className="md:w-1/2 h-64 bg-cover bg-center rounded-lg shadow-lg" style={{ backgroundImage: `url(${bgImage})` }}></div>
+          <div className="w-full md:w-1/2 h-64 sm:h-80 bg-cover bg-center rounded-lg shadow-lg" style={{ backgroundImage: `url(${realisation2})` }}></div>
             <div className="md:w-1/2 mt-6 md:mt-0 md:mr-10 text-center md:text-left">
               <h3 className="text-2xl font-bold flex items-center justify-center md:justify-start mb-4"><BuildIcon className='text-primary mr-2' /> Construction</h3>
               <p className="text-gray-700 mb-4">Bâtiments, maisons et infrastructures.</p>
@@ -99,7 +163,7 @@ const HomePage = () => {
 
           {/* Carte 3 */}
           <div className="flex flex-col md:flex-row items-center" data-aos="fade-up">
-            <div className="md:w-1/2 h-64 bg-cover bg-center rounded-lg shadow-lg" style={{ backgroundImage: `url(${bgImage})` }}></div>
+          <div className="w-full md:w-1/2 h-64 sm:h-80 bg-cover bg-center rounded-lg shadow-lg" style={{ backgroundImage: `url(${realisation3})` }}></div>
             <div className="md:w-1/2 mt-6 md:mt-0 md:ml-10 text-center md:text-left">
               <h3 className="text-2xl font-bold flex items-center justify-center md:justify-start mb-4"><ConstructionIcon className='text-primary mr-2' /> Extraction</h3>
               <p className="text-gray-700 mb-4">Extraction de matériaux pour vos travaux publics et privés.</p>
@@ -109,117 +173,9 @@ const HomePage = () => {
         </div>
       </Element>
 
-      
-      {/* Réalisations */}
-      <Element name="achievements" className="min-h-screen bg-White py-20 px-6 md:px-20 text-center">
-        <h1 className="text-5xl font-bold mb-16">Nos Réalisations</h1>
-
-        {/* Cartes */}
-        <div className="flex flex-col gap-12 items-start">
-          {/* Carte 1 */}
-          <div data-aos="fade-right" className='w-full md:w-1/3 h-80 bg-white rounded-lg shadow-md cursor-pointer'>
-            <div 
-              className="relative h-full bg-cover bg-center rounded-xl overflow-hidden group shadow-lg cursor-pointer"
-              style={{ backgroundImage: `url(${bgImage})` }}
-            >
-              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-all duration-300" />
-              <div className="absolute bottom-0 w-full p-4 text-white bg-black/50 text-center text-xl font-bold">Terrassement</div>
-              <div className="absolute bottom-[-100%] group-hover:bottom-16 transition-all duration-500 w-full text-center text-white px-4">
-                <p className="bg-black/70 p-4 rounded-md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit atque harum, vel, itaque provident vero quam iste quia at sed cumque ab? Reiciendis aut nobis ipsa id! Repellendus, porro iure dicta aut mollitia cumque sunt libero? Alias et quaerat quis, cum, illo cupiditate, officia voluptas consequatur eum ipsa veritatis vitae.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Carte 2 */}
-          <div data-aos="fade-right" className="w-full md:w-1/3 h-80 bg-white rounded-lg shadow-md cursor-pointer self-center">
-            <div
-              className="relative h-full bg-cover bg-center rounded-xl overflow-hidden group shadow-lg cursor-pointer"
-              style={{ backgroundImage: `url(${bgImage})` }}
-            >
-              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-all duration-300" />
-              <div className="absolute bottom-0 w-full p-4 text-white bg-black/50 text-center text-xl font-bold">Construction</div>
-              <div className="absolute bottom-[-100%] group-hover:bottom-16 transition-all duration-500 w-full text-center text-white px-4">
-                <p className="bg-black/70 p-4 rounded-md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit atque harum, vel, itaque provident vero quam iste quia at sed cumque ab? Reiciendis aut nobis ipsa id! Repellendus, porro iure dicta aut mollitia cumque sunt libero? Alias et quaerat quis, cum, illo cupiditate, officia voluptas consequatur eum ipsa veritatis vitae.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Carte 3 */}
-          <div data-aos="fade-right" className="w-full md:w-1/3 h-80 bg-white rounded-lg shadow-md cursor-pointer self-end">
-            <div
-              className="relative h-full bg-cover bg-center rounded-xl overflow-hidden group shadow-lg cursor-pointer"
-              style={{ backgroundImage: `url(${bgImage})` }}
-            >
-              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-all duration-300" />
-              <div className="absolute bottom-0 w-full p-4 text-white bg-black/50 text-center text-xl font-bold">Extraction</div>
-              <div className="absolute bottom-[-100%] group-hover:bottom-16 transition-all duration-500 w-full text-center text-white px-4">
-                <p className="bg-black/70 p-4 rounded-md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit atque harum, vel, itaque provident vero quam iste quia at sed cumque ab? Reiciendis aut nobis ipsa id! Repellendus, porro iure dicta aut mollitia cumque sunt libero? Alias et quaerat quis, cum, illo cupiditate, officia voluptas consequatur eum ipsa veritatis vitae.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Carte 4 */}
-          <div data-aos="fade-left" className="w-full md:w-1/3 h-80 bg-white rounded-lg shadow-md cursor-pointer self-center">
-            <div
-              className="relative h-full bg-cover bg-center rounded-xl overflow-hidden group shadow-lg cursor-pointer"
-              style={{ backgroundImage: `url(${bgImage})` }}
-            >
-              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-all duration-300" />
-              <div className="absolute bottom-0 w-full p-4 text-white bg-black/50 text-center text-xl font-bold">Excavation</div>
-              <div className="absolute bottom-[-100%] group-hover:bottom-16 transition-all duration-500 w-full text-center text-white px-4">
-                <p className="bg-black/70 p-4 rounded-md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit atque harum, vel, itaque provident vero quam iste quia at sed cumque ab? Reiciendis aut nobis ipsa id! Repellendus, porro iure dicta aut mollitia cumque sunt libero? Alias et quaerat quis, cum, illo cupiditate, officia voluptas consequatur eum ipsa veritatis vitae.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Carte 5 */}
-          <div data-aos="fade-left" className="w-full md:w-1/3 h-80 bg-white rounded-lg shadow-md cursor-pointer">
-            <div
-              className="relative h-full bg-cover bg-center rounded-xl overflow-hidden group shadow-lg cursor-pointer"
-              style={{ backgroundImage: `url(${bgImage})` }}
-            >
-              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-all duration-300" />
-              <div className="absolute bottom-0 w-full p-4 text-white bg-black/50 text-center text-xl font-bold">Demolition</div>
-              <div className="absolute bottom-[-100%] group-hover:bottom-16 transition-all duration-500 w-full text-center text-white px-4">
-                <p className="bg-black/70 p-4 rounded-md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit atque harum, vel, itaque provident vero quam iste quia at sed cumque ab? Reiciendis aut nobis ipsa id! Repellendus, porro iure dicta aut mollitia cumque sunt libero? Alias et quaerat quis, cum, illo cupiditate, officia voluptas consequatur eum ipsa veritatis vitae.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Carte 6 */}
-          <div data-aos="fade-right" className="w-full md:w-1/3 h-80 bg-white rounded-lg shadow-md cursor-pointer self-center">
-            <div
-              className="relative h-full bg-cover bg-center rounded-xl overflow-hidden group shadow-lg cursor-pointer"
-              style={{ backgroundImage: `url(${bgImage})` }}
-            >
-              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-all duration-300" />
-              <div className="absolute bottom-0 w-full p-4 text-white bg-black/50 text-center text-xl font-bold">Transport</div>
-              <div className="absolute bottom-[-100%] group-hover:bottom-16 transition-all duration-500 w-full text-center text-white px-4">
-                <p className="bg-black/70 p-4 rounded-md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit atque harum, vel, itaque provident vero quam iste quia at sed cumque ab? Reiciendis aut nobis ipsa id! Repellendus, porro iure dicta aut mollitia cumque sunt libero? Alias et quaerat quis, cum, illo cupiditate, officia voluptas consequatur eum ipsa veritatis vitae.</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Carte 7 */}
-          <div data-aos="fade-right" className="w-full md:w-1/3 h-80 bg-white rounded-lg shadow-md cursor-pointer self-end">
-            <div
-              className="relative h-full bg-cover bg-center rounded-xl overflow-hidden group shadow-lg cursor-pointer"
-              style={{ backgroundImage: `url(${bgImage})` }}
-            >
-              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-all duration-300" />
-              <div className="absolute bottom-0 w-full p-4 text-white bg-black/50 text-center text-xl font-bold">Création</div>
-              <div className="absolute bottom-[-100%] group-hover:bottom-16 transition-all duration-500 w-full text-center text-white px-4">
-                <p className="bg-black/70 p-4 rounded-md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit atque harum, vel, itaque provident vero quam iste quia at sed cumque ab? Reiciendis aut nobis ipsa id! Repellendus, porro iure dicta aut mollitia cumque sunt libero? Alias et quaerat quis, cum, illo cupiditate, officia voluptas consequatur eum ipsa veritatis vitae.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Element>
-
-
       {/* Contact */}
       <Element name="contact" className="min-h-screen bg-gray-100 py-20 px-6">
-        <div className="max-w-4xl mx-auto bg-white p-10 rounded-lg shadow-lg" data-aos="fade-up">
+        <div className="max-w-4xl mx-auto bg-white p-10 rounded-lg shadow-2xl" data-aos="fade-up">
           <h2 className="text-4xl font-bold text-center mb-8 text-gray-800">Contactez-nous</h2>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
@@ -227,34 +183,55 @@ const HomePage = () => {
               <input
                 type="text"
                 name="name"
+                placeholder="Entrez votre nom"
                 value={formData.name}
                 onChange={handleChange}
                 required
                 className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-400"
               />
             </div>
-            <div>
-              <label className="block mb-2 text-gray-700">Email</label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-400"
-              />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label className="block mb-2 text-gray-700">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="exemple@domaine.com"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-400"
+                />
+              </div>
+
+              <div>
+                <label className="block mb-2 text-gray-700">Téléphone</label>
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="+269 733 21 70"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-400"
+                />
+              </div>
             </div>
+
             <div>
               <label className="block mb-2 text-gray-700">Message</label>
               <textarea
                 name="message"
                 rows="5"
+                placeholder="Votre message ici..."
                 value={formData.message}
                 onChange={handleChange}
                 required
                 className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-400"
               ></textarea>
             </div>
+
             <div className="text-center">
               <button
                 type="submit"

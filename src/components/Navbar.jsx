@@ -19,8 +19,9 @@ const Navbar = () => {
   }, [])
 
   return (
-    <nav className={`sticky z-50 md:px-20 px-6 py-4 flex items-center justify-between font-roboto transition-all duration-300 
+    <nav className={`sticky z-50 px-6 md:px-60 py-4 flex items-center justify-between font-roboto transition-all duration-300 
         ${isScrolled ? 'bg-background/50 backdrop-blur-sm shadow-xl py-2 top-4 rounded-lg' : 'bg-background shadow-md top-0 py-4 w-full'}`}>
+      
       {/* Logo */}
       <RouterLink to="/" className=' items-center'>
         <img src={Logo} alt="LogoSTC" className='sm:w-1/3 hover:scale-150 transition-all duration-300 relative' />
@@ -45,7 +46,7 @@ const Navbar = () => {
             <ScrollLink to="achievements" smooth={true} duration={100} offset={-80} onClick={() => setOpen(false)} className="cursor-pointer hover:text-secondary">Réalisations</ScrollLink>
           </li>
           <li className='hover:scale-105 transition-all duration-300'>
-            <ScrollLink to="contact" smooth={true} duration={100} offset={-80} onClick={() => setOpen(false)} className="cursor-pointer hover:text-secondary">Contacte</ScrollLink>
+            <ScrollLink to="contact" smooth={true} duration={100} offset={-80} onClick={() => setOpen(false)} className="cursor-pointer hover:text-secondary">Contact</ScrollLink>
           </li>
           <li className='hover:scale-105 transition-all duration-300'>
             <RouterLink to="/about" onClick={() => setOpen(false)} className="hover:text-secondary">A Propos</RouterLink>

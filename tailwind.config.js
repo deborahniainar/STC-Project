@@ -11,6 +11,7 @@
           'secondary': '#f9c164',
           'warning': '#f6eb9a',
           'background': '#f3f4f6',
+          'footer': '#1a202c',
         },
 
         keyframes: {
@@ -24,8 +25,10 @@
         },
       },
     },
+
     fontFamily: {
       roboto: ['Roboto', 'sans-serif'],
     },
     plugins: [],
   }
+  
