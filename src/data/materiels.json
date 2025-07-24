@@ -1,0 +1,93 @@
+[
+    {
+      "designation": "PELLE MECANIQUE",
+      "marque": "CAT",
+      "modele": "320D2L",
+      "annee": "2013",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "PELLE MECANIQUE",
+      "marque": "CAT",
+      "modele": "320D2L",
+      "annee": "2014",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "PELLE MECANIQUE",
+      "marque": "CAT",
+      "modele": "336",
+      "annee": "2010",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "PELLE",
+      "marque": "HITACHI",
+      "modele": "ZX170W",
+      "annee": "2008",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "NIVELEUSE 12G",
+      "marque": "CAT",
+      "modele": "120",
+      "annee": "1996",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "CHARGEUR",
+      "marque": "CAT",
+      "modele": "950H",
+      "annee": "2010",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "BULLDOZER",
+      "marque": "CAT",
+      "modele": "D8R",
+      "annee": "2006",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "TRACTOPELLE",
+      "marque": "TEREX",
+      "modele": "TCB 8445",
+      "annee": "2016",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "ELEVATEUR",
+      "marque": "KOMATSU",
+      "modele": "FD25W-12",
+      "annee": "1999",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "COMPACTEUR 15 T",
+      "marque": "DYNAPAC",
+      "modele": "CA251D",
+      "annee": "1999",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    }
+  ]
+  
