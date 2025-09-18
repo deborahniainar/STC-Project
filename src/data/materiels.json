@@ -1,0 +1,372 @@
+[
+  {
+    "designation": "AUTO BETONNIERE",
+    "marque": "D'AVINO",
+    "modele": "560.2",
+      "annee": "2011",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "AUTO BETONNIERES",
+      "marque": "MERLO",
+      "modele": "4 M3",
+      "annee": "2023",
+      "nb": 2,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "BULLDOZER",
+      "marque": "CAT",
+      "modele": "D8R",
+      "annee": "2006",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "CAMION BENNE 4 m3",
+      "marque": "MITSUBISHI",
+      "modele": "CANTER",
+      "annee": "2012",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "CAMION BENNE 18 m3",
+      "marque": "VOLVO",
+      "modele": "FM400",
+      "annee": "2008",
+      "nb": 2,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "CAMION BENNE TRACTEUR",
+      "marque": "VOLVO",
+      "modele": "FM400",
+      "annee": "2008",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "CAMION CITERNE À EAU",
+      "marque": "SCANIA",
+      "modele": "94C30",
+      "annee": "2000",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "CAMION CITERNE D'EAU 20 m3",
+      "marque": "MAN",
+      "modele": "15 M3",
+      "annee": "2023",
+      "nb": 2,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "CAMION CITERNE GASOIL",
+      "marque": "HINO",
+      "modele": "3T500",
+      "annee": "2024",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "CHARGEUR",
+      "marque": "CAT",
+      "modele": "950H",
+      "annee": "2010",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "CITERNE À EAU OU GASOIL",
+      "marque": "14 m3",
+      "modele": "",
+      "annee": "2021",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "CITERNE GASOIL",
+      "marque": "MOBILE",
+      "modele": "2500 L",
+      "annee": "2018",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "CITERNE GASOIL",
+      "marque": "STATIONNAIRE",
+      "modele": "2500 L",
+      "annee": "2019",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "COMPACTEUR",
+      "marque": "BOMAG",
+      "modele": "BX212D3",
+      "annee": "2000",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "COMPACTEUR",
+      "marque": "KOMATSU",
+      "modele": "JV40CW2",
+      "annee": "1999",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "COMPACTEUR 15 T",
+      "marque": "DYNAPAC",
+      "modele": "CA251D",
+      "annee": "1999",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "CONCASEUR MOBILE",
+      "marque": "LIEDLBAUER",
+      "modele": "M03-KO-540",
+      "annee": "2011",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "ELEVATEUR",
+      "marque": "KOMATSU",
+      "modele": "FD25W-12",
+      "annee": "1999",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "GROUPE ELECTROGÈNE 75 KVA",
+      "marque": "KUSING",
+      "modele": "1004TG14",
+      "annee": "2015",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "MARTEAU PICKEUR (PELLE 320)",
+      "marque": "AJCE",
+      "modele": "810M",
+      "annee": "2015",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "MARTEAU PICKEUR (PELLE 320)",
+      "marque": "AJCE",
+      "modele": "AT810 M",
+      "annee": "2020",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "MARTEAU PICKEUR (PELLE 320)",
+      "marque": "JIUSING",
+      "modele": "JSB 20 GT",
+      "annee": "2016",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "MARTEAU PICKEUR (PELLE 336)",
+      "marque": "JIUSING",
+      "modele": "JSB 30 GT",
+      "annee": "2016",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "NIVELEUSE 12G",
+      "marque": "CAT",
+      "modele": "120",
+      "annee": "1996",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "PELLE",
+      "marque": "HITACHI",
+      "modele": "ZX170W",
+      "annee": "2008",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "PELLE MECANIQUE",
+      "marque": "CAT",
+      "modele": "320D2L",
+      "annee": "2013",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "PELLE MECANIQUE",
+      "marque": "CAT",
+      "modele": "320D2L",
+      "annee": "2014",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "PELLE MECANIQUE",
+      "marque": "CAT",
+      "modele": "336",
+      "annee": "2010",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "PORTE CHAR",
+      "marque": "CRANE FRUEFAUF",
+      "modele": "65GJ36",
+      "annee": "2012",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "PICK UP 4X4 BLANC (493 Y 73)",
+      "marque": "TOYOTA",
+      "modele": "KUN25L",
+      "annee": "2010",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "PICK UP 4X4 BLANC (732 AF 73)",
+      "marque": "TOYOTA",
+      "modele": "KUN25L",
+      "annee": "2011",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "PICK UP 4X4 NOIR (003 AP 73)",
+      "marque": "TOYOTA",
+      "modele": "KUN25L",
+      "annee": "2011",
+      "nb": 1,
+      "etat": "Bon",  
+      "propriete": "En propre"
+    },
+    {
+      "designation": "PICK UP 4X4 GRIS (339 AF 73)",
+      "marque": "TOYOTA",
+      "modele": "KUN25L",
+      "annee": "2012",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "PICK UP GRIS L 200 964 BS 73",
+      "marque": "MITSUBISHI",
+      "modele": "L200",
+      "annee": "2023",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "PICK UP GRIS L 200 964 BZ 73",
+      "marque": "MITSUBISHI",
+      "modele": "L200",
+      "annee": "2023",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "PICK UP 4x4 L200 646BV73",
+      "marque": "MITSUBISHI",
+      "modele": "L200",
+      "annee": "2023",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "PICK UP 4x4 L200 278BZ73",
+      "marque": "MITSUBISHI",
+      "modele": "L200",
+      "annee": "2023",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "PICK UP 4x4 L200 298BZ73",
+      "marque": "MITSUBISHI",
+      "modele": "L200",
+      "annee": "2023",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "PICK UP 4x4 HILUX",
+      "marque": "TOYOTA",
+      "modele": "HILUXDC2",
+      "annee": "2023",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "STATION TOTALE TOPOGRAPHIE",
+      "marque": "TOPCON",
+      "modele": "GTS 1002",
+      "annee": "2019",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    },
+    {
+      "designation": "TRACTOPELLE",
+      "marque": "TEREX",
+      "modele": "TCB 8445",
+      "annee": "2016",
+      "nb": 1,
+      "etat": "Bon",
+      "propriete": "En propre"
+    }
+  ]
+  
