@@ -255,7 +255,7 @@ const HomePage = () => {
 
     try {
       const result = await emailjs.send(
-        'service_gubav49',
+        'service_d0q33re',
         'template_zkkvkh5',
         {
           name: formData.name,
