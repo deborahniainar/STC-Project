@@ -3,6 +3,7 @@ import { Element, animateScroll as scroll, Link as ScrollLink } from 'react-scro
 import { Link } from 'react-router-dom'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import emailjs from '@emailjs/browser'
 
 import bgImage from '../Images/bgImg.jpg'
 import terrassement from '../Images/Terrassement.png'
@@ -243,52 +244,35 @@ const HomePage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    // Vérification des champs obligatoires
-    if (!formData.name.trim()) {
-      setValidationError('name')
-      return
-    }
-    if (!formData.email.trim()) {
-      setValidationError('email')
-      return
-    }
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(formData.email.trim())) {
-      setValidationError('email')
-      showNotification('Veuillez entrer un email valide.', 'error')
-      return
-    }
-    if (!formData.phone.trim()) {
-      setValidationError('phone')
-      return
-    }
-    if (!formData.message.trim()) {
-      setValidationError('message')
-      return
-    }
+    // Vérification des champs
+    if (!formData.name.trim()) return setValidationError('name')
+    if (!formData.email.trim()) return setValidationError('email')
+    if (!formData.phone.trim()) return setValidationError('phone')
+    if (!formData.message.trim()) return setValidationError('message')
 
     setValidationError('')
-    const payload = { ...formData, phone: formData.phone.trim().replace(/\s+/g, ' ') }
-
     setIsLoading(true)
+
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      })
+      const result = await emailjs.send(
+        'service_gubav49',
+        'template_zkkvkh5',
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message
+        },
+        'NyaVbPpK1WPqVgeZY'
+      )
 
-      const data = await response.json()
+      console.log('EmailJS Success:', result.text)
+      showNotification('Message envoyé avec succès !', 'success')
+      setFormData({ name: '', email: '', phone: '', message: '' })
 
-      if (response.ok && data.success) {
-        showNotification(data.message || 'Message envoyé avec succès !', 'success')
-        setFormData({ name: '', email: '', phone: '', message: '' })
-      } else {
-        showNotification(data.message || 'Erreur lors de l\'envoi du message.', 'error')
-      }
     } catch (error) {
-      console.error('Erreur:', error)
-      showNotification('Erreur réseau. Vérifiez votre connexion internet.', 'error')
+      console.error('EmailJS Error:', error)
+      showNotification('Erreur lors de l\'envoi du message.', 'error')
     } finally {
       setIsLoading(false)
     }
